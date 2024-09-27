@@ -14,6 +14,10 @@ const app = express();
 import mongoose from "mongoose";
 import methodOverride from "method-override";
 import morgan from "morgan";
+import authController from "./controllers/auth.js"; // NEED TO CONFIRM IF THIS IS HOW YOU WRITE IT
+
+//importing middleware
+app.use("/auth", authController);
 
 // Set the port from environment variable or default to 3000
 const port = process.env.PORT ? process.env.PORT : "3000";

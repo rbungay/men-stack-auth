@@ -27,6 +27,11 @@ app.use(methodOverride("_method"));
 // Morgan for logging HTTP requests
 app.use(morgan("dev"));
 
+//Defining a route for index.ejs
+app.get("/", async (req, res) => {
+  res.render("index.ejs");
+});
+
 mongoose.connection.on("connected", () => {
   console.log(`Connected to MongoDB ${mongoose.connection.name}.`);
 
